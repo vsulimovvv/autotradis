@@ -1,0 +1,63 @@
+.plan-order {
+  @include breakpointsMaxW($bp-991) {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 115px;
+    @include breakpointsMaxW($bp-container) {
+      gap: 40px;
+    }
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__text {
+    @include adaptive-value('margin-bottom', 70, 40, 1);
+  }
+
+  &__preview {
+    width: 100%;
+    height: 526px;
+
+    img {
+      @include img(cover);
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      height: 350px;
+    }
+  }
+  &__list {
+  }
+
+  &__heading {
+  }
+
+  &__item {
+    display: flex;
+    gap: 30px;
+    @include adaptive-value('gap', 30, 15, 1);
+    &:not(:last-child) {
+      @include adaptive-value('margin-bottom', 65, 35, 1);
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    @include adaptive-value('height', 84, 60, 1);
+    @include adaptive-value('width', 84, 60, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+  }
+}

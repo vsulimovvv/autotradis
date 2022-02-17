@@ -1,0 +1,112 @@
+.pay {
+  @include adaptive-value('padding-top', 75, 35, 1);
+  @include adaptive-value('padding-bottom', 75, 35, 1);
+
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__text {
+    max-width: 425px;
+    @include adaptive-value('margin-bottom', 54, 35, 1);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+    @include adaptive-value('gap', 45, 20, 1);
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    @include adaptive-value('gap', 25, 15, 1);
+  }
+
+  &__item {
+    background-color: var(--color-white);
+    border: 1px solid #cfcfcf;
+    border-radius: 10px;
+    width: 100%;
+    @include adaptive-value('height', 135, 100, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    img {
+      object-fit: contain;
+
+      @include breakpointsMaxW($bp-576) {
+        max-width: 90px;
+      }
+    }
+  }
+
+  &__right {
+    padding-top: 15px;
+  }
+
+  &__heading {
+    @include adaptive-value('font-size', 25, 20, 1);
+    margin-bottom: 8px;
+  }
+
+  &__method {
+    padding: 28px;
+    padding-left: 100px;
+    position: relative;
+    background-color: var(--color-bg);
+    border-radius: 10px;
+    min-height: 135px;
+    max-width: 600px;
+    width: 100%;
+    @include adaptive-value('padding', 28, 20, 1);
+    @include adaptive-value('padding-left', 100, 90, 1);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &::after {
+      @include elDef();
+      width: 42px;
+      height: 42px;
+      top: 28px;
+      // left: 28px;
+      background-color: #515151;
+
+      @include adaptive-value('left', 28, 20, 1);
+      @include adaptive-value('top', 28, 20, 1);
+    }
+
+    &--bank-card {
+      &::after {
+        @include maskImage(url('../images/icons/bank-card.svg'), contain);
+      }
+    }
+
+    &--cash {
+      &::after {
+        @include maskImage(url('../images/icons/cash.svg'), contain);
+      }
+    }
+  }
+
+  &__descr {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 445px;
+    color: #5c5c5c;
+
+    @include breakpointsMaxW($bp-768) {
+      font-size: 14px;
+    }
+  }
+}

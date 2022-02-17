@@ -1,0 +1,105 @@
+<section
+  class="hero"
+  style="background-image: url('images/content/hero-bg.jpg')"
+>
+  <div class="container">
+    <div class="hero__wrapper">
+      <div class="hero__offer">
+        <h1 class="hero__title section-title">
+          <span class="color-accent">Грузоперевозки с экономией</span> до 70% на
+          попутной доставке по всей России
+        </h1>
+        <div class="hero__text">
+          <p>
+            Организуем доставку заказов по всей России для юридических и
+            физических лиц, для интернет-магазинов, ресторанови, и других
+            крупным компаний.
+          </p>
+        </div>
+      </div>
+
+      <a class="hero__arrow" href="#calc">
+        <svg width="30" height="37">
+          <use xlink:href="images/sprite.svg#arrow"></use>
+        </svg>
+      </a>
+
+      <div class="hero__calc calc-box" id="calc">
+        <h3 class="calc-box__title">Экспресс расчёт</h3>
+
+        <form class="form-calc">
+          <div class="form-calc__wrapper">
+            <div class="form-calc__group form-calc__group--address">
+              <label class="form-calc__label">Адреса доставки</label>
+              <div class="form-calc__inputs">
+                <div class="form-calc__input-wrap">
+                  <input
+                    class="form-calc__input"
+                    type="text"
+                    placeholder="Откуда"
+                    required
+                  />
+                </div>
+                <div class="form-calc__input-wrap">
+                  <input
+                    class="form-calc__input"
+                    type="text"
+                    placeholder="Куда"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-calc__group form-calc__group--length">
+              <label class="form-calc__label">Длина</label>
+              <input
+                class="form-calc__input"
+                type="number"
+                placeholder="0.0 м"
+                required
+              />
+            </div>
+            <div class="form-calc__group form-calc__group--width">
+              <label class="form-calc__label">Ширина</label>
+              <input
+                class="form-calc__input"
+                type="number"
+                placeholder="0.0 м"
+                required
+              />
+            </div>
+            <div class="form-calc__group form-calc__group--heigth">
+              <label class="form-calc__label">Высота</label>
+              <input
+                class="form-calc__input"
+                type="number"
+                placeholder="0.0 м"
+                required
+              />
+            </div>
+            <div class="form-calc__group form-calc__group--name">
+              <label class="form-calc__label">Ваше имя</label>
+              <input
+                class="form-calc__input"
+                type="text"
+                placeholder="Введите Ваше имя"
+                required
+              />
+            </div>
+            <div class="form-calc__group form-calc__group--phone">
+              <label class="form-calc__label">Телефон</label>
+              <input
+                class="form-calc__input"
+                type="tel"
+                placeholder="+7 (___) ___ - __ - __"
+                required
+              />
+            </div>
+
+            <button class="form-calc__btn btn" type="submit">Рассчитать</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

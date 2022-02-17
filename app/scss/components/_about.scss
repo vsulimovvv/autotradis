@@ -1,0 +1,137 @@
+.about {
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    @include elDef();
+    background-color: var(--color-accent);
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: -1;
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    min-height: 650px;
+    display: grid;
+    grid-template-columns: minmax(auto, 445px) minmax(auto, 416px) minmax(
+        auto,
+        255px
+      );
+
+    @include adaptive-value('gap', 50, 30, 1);
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: 1fr 1fr minmax(auto, 235px);
+    }
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 20, 1);
+  }
+
+  &__text {
+    p {
+      @include adaptive-value('margin-bottom', 30, 20, 1);
+    }
+  }
+
+  &__info {
+    padding-top: 100px;
+    // margin-right: 50px;
+  }
+
+  &__preview {
+    min-height: 650px;
+    width: 100%;
+
+    @include breakpointsMaxW($bp-768) {
+      height: 500px;
+    }
+
+    img {
+      @include img(cover);
+    }
+  }
+
+  &__right {
+    @include breakpointsMaxW($bp-991) {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__list {
+    @include breakpointsMaxW($bp-991) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    padding-top: 70px;
+    position: relative;
+
+    @include breakpointsMaxW($bp-991) {
+      text-align: center;
+    }
+
+    &:not(:last-child) {
+      @include adaptive-value('margin-bottom', 45, 20, 1);
+    }
+
+    &::after {
+      @include elDef();
+      width: 47px;
+      height: 53px;
+
+      top: 0;
+      left: 0;
+
+      @include breakpointsMaxW($bp-991) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &--professionalism {
+      &::after {
+        @include backgroundImage(url('../images/content/about/1.svg'), contain);
+      }
+    }
+
+    &--responsibility {
+      &::after {
+        @include backgroundImage(url('../images/content/about/2.svg'), contain);
+      }
+    }
+    &--attitude {
+      &::after {
+        @include backgroundImage(url('../images/content/about/3.svg'), contain);
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__descr {
+    color: #1b1b1b;
+  }
+}

@@ -1,0 +1,116 @@
+.contacts {
+  @include adaptive-value('padding-top', 75, 35, 1);
+
+  &__top {
+    max-width: 565px;
+    margin: 0 auto;
+    text-align: center;
+    @include adaptive-value('margin-bottom', 42, 20, 1);
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 35, 20, 1);
+  }
+
+  &__text {
+    font-size: 18px;
+    color: #5c5c5c;
+  }
+
+  &__list {
+    @include adaptive-value('padding-top', 35, 20, 1);
+    @include adaptive-value('margin-bottom', 35, 20, 1);
+    border-top: 1px solid #e7e7e7;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    gap: 10px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      gap: 30px;
+    }
+
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link {
+    font-size: 20px;
+    display: block;
+    padding-left: 54px;
+    position: relative;
+    @include adaptive-value('font-size', 20, 16, 1);
+
+    &:hover {
+      .contacts__icon {
+        background-color: var(--color-accent);
+
+        &::after {
+          background-color: var(--color-black);
+        }
+      }
+    }
+
+    &--phone {
+      font-size: 25px;
+      @include adaptive-value('font-size', 25, 20, 1);
+      .contacts__icon {
+        &::after {
+          @include maskImage(url('../images/icons/phone.svg'), contain);
+        }
+      }
+    }
+
+    &--location {
+      .contacts__icon {
+        &::after {
+          @include maskImage(url('../images/icons/location.svg'), contain);
+        }
+      }
+    }
+
+    &--mail {
+      .contacts__icon {
+        &::after {
+          @include maskImage(url('../images/icons/mail.svg'), contain);
+        }
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    transition: 150ms ease;
+
+    &::after {
+      transition: 150ms ease;
+      @include elDef();
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #757575;
+    }
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-size: 17px;
+    color: #3a3a3a;
+  }
+
+  &__map {
+    @include adaptive-value('height', 482, 350, 1);
+  }
+}

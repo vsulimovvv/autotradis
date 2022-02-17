@@ -1,0 +1,147 @@
+.header {
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+
+  &.scroll-header {
+    background-color: var(--color-text);
+    border-bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
+
+    .header__top {
+      display: none;
+    }
+  }
+
+  &__top {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+
+    @include breakpointsMaxW($bp-991) {
+      display: none;
+    }
+  }
+
+  &__list {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 45px;
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding-left: 23px;
+
+    &::after {
+      @include elDef();
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      background-color: var(--color-accent);
+    }
+
+    &--location {
+      &::after {
+        @include maskImage(url('../images/icons/location.svg'), contain);
+      }
+    }
+
+    &--mail {
+      &::after {
+        @include maskImage(url('../images/icons/mail.svg'), contain);
+      }
+    }
+
+    &--phone {
+      font-size: 24px;
+      font-weight: 700;
+      padding-left: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  &__toggle {
+    display: none;
+
+    @include breakpointsMaxW($bp-991) {
+      display: block;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 350ms ease-in;
+      z-index: 11;
+
+      &-line {
+        border-radius: 3px;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-white);
+        position: relative;
+        transition: 150ms ease-in;
+
+        &::after,
+        &::before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: var(--color-white);
+          transition: 350ms ease-in;
+          border-radius: 3px;
+        }
+
+        &::after {
+          top: -12px;
+        }
+
+        &::before {
+          bottom: -12px;
+        }
+      }
+
+      &.active {
+        .header__toggle-line {
+          background-color: transparent;
+          &::after {
+            transform: translateX(-50%) rotate(-45deg);
+            top: 0px;
+          }
+
+          &::before {
+            transform: translateX(-50%) rotate(45deg);
+            bottom: 0px;
+          }
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}

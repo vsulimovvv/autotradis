@@ -1,0 +1,89 @@
+.advantages {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 256px));
+    justify-content: space-between;
+    gap: 30px;
+
+    @include breakpointsMaxW($bp-991) {
+      grid-template-columns: repeat(2, minmax(auto, 256px));
+      justify-content: center;
+      gap: 50px;
+    }
+    @include breakpointsMaxW($bp-576) {
+     grid-template-columns: minmax(auto, 256px);
+    }
+  }
+
+  &__item {
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &:nth-child(1) {
+      .advantages__icon {
+        &::after {
+          @include backgroundImage(
+            url('../images/content/advantages/1.svg'),
+            contain
+          );
+        }
+      }
+    }
+    &:nth-child(2) {
+      .advantages__icon {
+        &::after {
+          @include backgroundImage(
+            url('../images/content/advantages/2.svg'),
+            contain
+          );
+        }
+      }
+    }
+    &:nth-child(3) {
+      .advantages__icon {
+        &::after {
+          @include backgroundImage(
+            url('../images/content/advantages/3.svg'),
+            contain
+          );
+        }
+      }
+    }
+    &:nth-child(4) {
+      .advantages__icon {
+        &::after {
+          @include backgroundImage(
+            url('../images/content/advantages/4.svg'),
+            contain
+          );
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background-color: var(--color-bg);
+    flex-shrink: 0;
+    position: relative;
+
+    &::after {
+      @include elDef();
+      width: 47px;
+      height: 47px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__text {
+    color: #3e4143;
+  }
+}

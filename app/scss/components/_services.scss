@@ -1,0 +1,34 @@
+.services {
+  @include adaptive-value('padding-top', 70, 40, 1);
+  @include adaptive-value('padding-bottom', 70, 40, 1);
+  &__title {
+    max-width: 680px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    @include adaptive-value('margin-bottom', 70, 40, 1);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, 296px));
+    gap: 50px 15px;
+    justify-content: space-between;
+
+    @include breakpointsMaxW($bp-container) {
+      grid-template-columns: repeat(3, minmax(auto, 296px));
+      justify-content: center;
+    }
+    @include breakpointsMaxW($bp-768) {
+      grid-template-columns: repeat(2, minmax(auto, 296px));
+    }
+    @include breakpointsMaxW($bp-576) {
+      grid-template-columns: minmax(auto, 296px);
+    }
+  }
+
+  &__item {
+    height: 100%;
+    width: 100%;
+  }
+}

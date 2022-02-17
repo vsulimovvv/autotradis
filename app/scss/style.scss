@@ -1,0 +1,34 @@
+@import 'libs';
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'global';
+
+@import './animations';
+
+// * ===== Other components
+@import './components/form.scss';
+@import './components/custom-checkbox.scss';
+@import './components/menu.scss';
+
+// * ===== Card Components
+@import './components/card-services.scss';
+@import './components/card-reviews.scss';
+@import './components/card-product.scss';
+
+// * ===== Section Components
+@import './components/footer';
+@import './components/header';
+@import './components/hero';
+@import './components/services';
+@import './components/contacts';
+@import './components/pay';
+@import './components/about';
+@import './components/request';
+@import './components/location';
+@import './components/reviews';
+@import './components/car-park';
+@import './components/descr';
+@import './components/plan-order';
+@import './components/advantages';

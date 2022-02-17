@@ -1,0 +1,15 @@
+.footer {
+  font-size: 15px;
+  color: #9f9f9f;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    @include breakpointsMaxW($bp-768) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

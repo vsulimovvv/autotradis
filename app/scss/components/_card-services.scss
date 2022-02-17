@@ -1,0 +1,173 @@
+.services-card {
+  text-align: center;
+  max-width: 296px;
+  width: 100%;
+  height: 100%;
+
+  &--associated {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/1.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--prefabricated {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/2.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--appartment {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/3.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--refrigerated {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/4.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--food {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/5.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--military {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/6.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--oversized {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/7.svg'),
+          contain
+        );
+      }
+    }
+  }
+  &--office {
+    .services-card__badge {
+      &::after {
+        @include maskImage(
+          url('../images/content/services/icons/8.svg'),
+          contain
+        );
+      }
+    }
+  }
+
+  &:hover {
+    .services-card {
+      &__btn {
+        background-color: var(--color-accent);
+        border-color: transparent;
+      }
+
+      &__img {
+        &::after {
+          transform: translateY(100%);
+        }
+      }
+
+      &__badge {
+        background-color: var(--color-text);
+
+        &::after {
+          background-color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  &__img {
+    @include adaptive-value('margin-bottom', 28, 15, 1);
+    @include adaptive-value('height', 380, 350, 1);
+    position: relative;
+    overflow: hidden;
+    height: 380px;
+
+    img {
+      @include img(cover);
+    }
+
+    &::after {
+      @include elDef();
+      background-color: rgba(34, 34, 34, 0.3);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: 250ms ease;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 15, 10, 1);
+    @include adaptive-value('font-size', 17, 16, 1);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    @include adaptive-value('margin-bottom', 19, 15, 1);
+  }
+
+  &__btn {
+    font-weight: 700;
+    font-style: 14px;
+    padding: 16px 45px;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-white);
+    border-radius: 50%;
+    width: 68px;
+    height: 68px;
+    transition: 150ms ease;
+    transition-delay: 100ms;
+
+    &::after {
+      @include elDef();
+      width: 42px;
+      height: 42px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-text);
+      transition: 150ms ease;
+      transition-delay: 100ms;
+    }
+  }
+}

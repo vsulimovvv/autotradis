@@ -1,0 +1,68 @@
+.descr {
+  @include adaptive-value('padding-bottom', 100, 50, 1);
+
+  position: relative;
+  z-index: 2;
+
+  @include breakpointsMaxW($bp-991) {
+    padding-bottom: calc(500px + (750 - 500) * ((100vw - 375px) / (991 - 375)));
+  }
+
+  &__preview {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 942px;
+    height: 701px;
+    z-index: -1;
+
+    @include breakpointsMaxW(1920px) {
+      width: calc(450px + (942 - 450) * ((100vw - 991px) / (1920 - 991)));
+    }
+
+    @include breakpointsMaxW($bp-991) {
+      width: 90%;
+      right: 0;
+    }
+
+    img {
+      @include img(contain);
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__wrapper {
+    max-width: 50%;
+
+    @include breakpointsMaxW($bp-991) {
+      max-width: 100%;
+    }
+  }
+
+  &__text {
+    @include adaptive-value('margin-bottom', 70, 40, 1);
+  }
+
+  &__item {
+    display: flex;
+    gap: 30px;
+    @include adaptive-value('gap', 30, 15, 1);
+
+    &:not(:last-child) {
+      @include adaptive-value('margin-bottom', 65, 35, 1);
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    @include adaptive-value('height', 57, 37, 1);
+    @include adaptive-value('width', 57, 37, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent);
+  }
+}

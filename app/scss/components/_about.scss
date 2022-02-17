@@ -47,7 +47,6 @@
 
   &__info {
     padding-top: 100px;
-    // margin-right: 50px;
   }
 
   &__preview {
@@ -70,7 +69,9 @@
   }
 
   &__list {
+    padding-top: 50px;
     @include breakpointsMaxW($bp-991) {
+      padding-top: 0;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;

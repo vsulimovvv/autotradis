@@ -17,6 +17,20 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
   })();
+  (function sliderReviews() {
+    const sliderEl = document.querySelectorAll('.reviews__slider');
+    sliderEl.forEach((el) => {
+      new Swiper(el, {
+        slidesPerView: 'auto',
+        spaceBetween: 30,  navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },   pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    });
+  })();
 
   // * ===== Custom select
   (function customSelect() {
@@ -42,25 +56,25 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   })();
 
-    //* Change Background Header
-    function scrollHeader() {
-      const nav = document.querySelector('header');
-  
-      if (this.scrollY >= 10) {
-        nav.classList.add('scroll-header');
-      } else {
-        nav.classList.remove('scroll-header');
-      }
+  //* Change Background Header
+  function scrollHeader() {
+    const nav = document.querySelector('header');
+
+    if (this.scrollY >= 10) {
+      nav.classList.add('scroll-header');
+    } else {
+      nav.classList.remove('scroll-header');
     }
-    window.addEventListener('scroll', scrollHeader);
-  
-    // ! Change
-    (function changeBgHeader() {
-      const header = document.querySelector('header');
-      if (window.pageYOffset >= 10) {
-        header.classList.add('scroll-header');
-      }
-    })();
+  }
+  window.addEventListener('scroll', scrollHeader);
+
+  // ! Change
+  (function changeBgHeader() {
+    const header = document.querySelector('header');
+    if (window.pageYOffset >= 10) {
+      header.classList.add('scroll-header');
+    }
+  })();
 
   // // * ===== Modal
   // (function modals() {

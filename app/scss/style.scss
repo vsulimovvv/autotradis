@@ -8,14 +8,15 @@
 @import './animations';
 
 // * ===== Other components
-@import './components/form.scss';
-@import './components/custom-checkbox.scss';
-@import './components/menu.scss';
+@import './components/form';
+@import './components/custom-checkbox';
+@import './components/custom-select';
+@import './components/menu';
 
 // * ===== Card Components
-@import './components/card-services.scss';
-@import './components/card-reviews.scss';
-@import './components/card-product.scss';
+@import './components/card-services';
+@import './components/card-reviews';
+@import './components/card-product';
 
 // * ===== Section Components
 @import './components/footer';
@@ -32,3 +33,4 @@
 @import './components/descr';
 @import './components/plan-order';
 @import './components/advantages';
+@import './components/popups';

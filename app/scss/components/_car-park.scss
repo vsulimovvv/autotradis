@@ -28,14 +28,14 @@
 
     &__list {
       display: grid;
-      grid-template-columns: repeat(6, minmax(auto, 148px));
+      grid-template-columns: repeat(5, minmax(auto, 148px));
       align-items: center;
       gap: 12px;
       border-radius: 20px;
       padding: 10px;
 
       @include breakpointsMaxW($bp-768) {
-        grid-template-columns: repeat(2, minmax(auto, 197px));
+        grid-template-columns: repeat(2, minmax(auto, 148px));
       }
     }
 

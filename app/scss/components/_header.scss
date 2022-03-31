@@ -40,6 +40,10 @@
     position: relative;
     padding-left: 23px;
 
+    &:hover {
+      color: var(--color-accent);
+    }
+
     &::after {
       @include elDef();
       width: 16px;
@@ -51,6 +55,9 @@
     }
 
     &--location {
+      &:hover {
+        color: inherit;
+      }
       &::after {
         @include maskImage(url('../images/icons/location.svg'), contain);
       }
